@@ -1,0 +1,121 @@
+--- 
+apiVersion: v1
+data: 
+  application.properties: "# Rest API\n\
+      quarkus.http.auth.form.landing-page=/index.html\n\
+      ## DEV Override\n\
+      %dev.quarkus.http.port=8088\n\
+      # Datasource\n\
+      quarkus.datasource.db-kind=postgresql\n\
+      quarkus.datasource.username=user\n\
+      quarkus.datasource.password=password\n\
+      quarkus.datasource.jdbc.url=jdbc:postgresql://postgresql:5432/market?currentSchema=stock\n\
+      quarkus.datasource.jdbc.max-size=10\n\
+      # Flyway\n\
+      quarkus.flyway.create-schemas=true\n\
+      quarkus.flyway.schemas=stock\n\
+      %dev.quarkus.flyway.schemas=STOCK\n\
+      %test.quarkus.flyway.schemas=STOCK\n\
+      quarkus.flyway.validate-on-migrate=true\n\
+      quarkus.flyway.migrate=true\n\
+      quarkus.flyway.baseline-on-migrate=true\n\
+      quarkus.flyway.locations=db/migration\n\
+      quarkus.flyway.migrate-at-start=true\n\
+      quarkus.flyway.baseline-version=0\n\
+      ## DEV Overrides\n\
+      %dev.quarkus.datasource.db-kind=h2\n\
+      %dev.quarkus.datasource.username=sa\n\
+      %dev.quarkus.datasource.password=password\n\
+      %dev.quarkus.datasource.jdbc.url=jdbc:h2:mem:market;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS STOCK;\n\
+      %dev.quarkus.datasource.jdbc.max-size=10\n\
+      ## TEST Overrides\n\
+      %test.quarkus.datasource.db-kind=h2\n\
+      %test.quarkus.datasource.username=sa\n\
+      %test.quarkus.datasource.password=password\n\
+      %test.quarkus.datasource.jdbc.url=jdbc:h2:mem:market;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS STOCK;\n\
+      %test.quarkus.datasource.jdbc.max-size=10\n\
+      #JPA 配置\n\
+      quarkus.hibernate-orm.database.generation=none\n\
+      quarkus.hibernate-orm.log.sql=false\n\
+      ## DEV Config Overrides\n\
+      %dev.quarkus.hibernate-orm.database.generation=none\n\
+      %dev.quarkus.hibernate-orm.log.sql=true\n\n\
+      # Logging\n\
+      quarkus.banner.enabled=true\n\
+      quarkus.log.level=INFO\n\
+      quarkus.log.file.enable=true\n\
+      quarkus.log.file.level=DEBUG\n\
+      quarkus.log.file.path=/tmp/kys-app.log\n\n\
+      ## DEV Profile Config Overrides\n\
+      %dev.quarkus.log.console.color=true\n\
+      %dev.quarkus.log.console.json=false\n\
+      %test.quarkus.log.console.json=false\n\n\
+      # OpenShift\n\
+      quarkus.kubernetes-client.trust-certs=true\n\
+      quarkus.openshift.route.expose=true\n\
+      quarkus.openshift.labels.generateby=quarkus-plugin\n\n\
+      quarkus.openshift.mounts.application-properties-volume.path=/jboss/home/config/application.properties\n\
+      quarkus.openshift.mounts.application-properties-volume.sub-path=application.properties\n\
+      quarkus.openshift.config-map-volumes.application-properties-volume.config-map-name=kyd-main-config\n\
+      quarkus.openshift.config-map-volumes.application-properties-volume.default-mode=0420\n\
+      quarkus.openshift.route.annotations.\"haproxy.router.openshift.io/timeout\"=60s\n\
+      quarkus.openshift.labels.\"kubernetes.io/part-of\"=quant-invest\n\n\n\
+      # Restful Cli\n\
+      countries-api/mp-rest/url=https://restcountries.com\n\
+      countries-api/mp-rest/scope=javax.inject.Singleton\n\
+      countries-api/mp-rest/hostnameVerifier=io.quarkus.restclient.NoopHostnameVerifier\n\
+      # countries-api/mp-rest/proxyAddress=app-proxy.cgc.com.my:3128\n\n\n\
+      # Test google api since googleapi require httpproxy\n\
+      # google-api/mp-rest/url=https://www.youtube.com\n\
+      # google-api/mp-rest/proxyAddress=192.168.2.15:3128\n\
+      # google-api/mp-rest/connectTimeout=3000\n\
+      # google-api/mp-rest/readTimeout=3000\n\n\
+      product-api/mp-rest/url=http://localhost:8081\n\
+      product-api/mp-rest/scope=javax.inject.Singleton\n\
+      product-api/mp-rest/hostnameVerifier=io.quarkus.restclient.NoopHostnameVerifier\n\n\
+      # quarkus.tls.trust-all=true\n\n\
+      # Quarkus Mail\n\
+      # quarkus.mailer.auth-methods=DIGEST-MD5 CRAM-SHA256 CRAM-SHA1 CRAM-MD5 PLAIN LOGIN\n\
+      # quarkus.mailer.from=sqr-umarshabbir@cgc.com.my\n\
+      # quarkus.mailer.host=smtpmail.cgc.com.my\n\
+      # quarkus.mailer.port=25\n\
+      # quarkus.mailer.ssl=false\n\n"
+kind: ConfigMap
+metadata: 
+  annotations: 
+    kubectl.kubernetes.io/last-applied-configuration: "{\"apiVersion\":\"v1\",\"data\":{\"application.properties\":\"# Rest API\\r\\nquarkus.http.auth.form.landing-page=/index.html\\r\\n## DEV Override\\r\\n%dev.quarkus.http.port=8088\\r\\n# Datasource\\r\\nquarkus.datasource.db-kind=postgresql\\r\\nquarkus.datasource.username=user\\r\\nquarkus.datasource.password=password\\r\\nquarkus.datasource.jdbc.url=jdbc:postgresql://postgresql:5432/market?currentSchema=stock\\r\\nquarkus.datasource.jdbc.max-size=10\\r\\n# Flyway\\r\\nquarkus.flyway.create-schemas=true\\r\\nquarkus.flyway.schemas=stock\\r\\n%dev.quarkus.flyway.schemas=STOCK\\r\\n%test.quarkus.flyway.schemas=STOCK\\r\\nquarkus.flyway.validate-on-migrate=true\\r\\nquarkus.flyway.migrate=true\\r\\nquarkus.flyway.baseline-on-migrate=true\\r\\nquarkus.flyway.locations=db/migration\\r\\nquarkus.flyway.migrate-at-start=true\\r\\nquarkus.flyway.baseline-version=0\\r\\n## DEV Overrides\\r\\n%dev.quarkus.datasource.db-kind=h2\\r\\n%dev.quarkus.datasource.username=sa\\r\\n%dev.quarkus.datasource.password=password\\r\\n%dev.quarkus.datasource.jdbc.url=jdbc:h2:mem:market;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS STOCK;\\r\\n%dev.quarkus.datasource.jdbc.max-size=10\\r\\n## TEST Overrides\\r\\n%test.quarkus.datasource.db-kind=h2\\r\\n%test.quarkus.datasource.username=sa\\r\\n%test.quarkus.datasource.password=password\\r\\n%test.quarkus.datasource.jdbc.url=jdbc:h2:mem:market;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS STOCK;\\r\\n%test.quarkus.datasource.jdbc.max-size=10\\r\\n#JPA 配置\\r\\nquarkus.hibernate-orm.database.generation=none\\r\\nquarkus.hibernate-orm.log.sql=false\\r\\n## DEV Config Overrides\\r\\n%dev.quarkus.hibernate-orm.database.generation=none\\r\\n%dev.quarkus.hibernate-orm.log.sql=true\\r\\n\\r\\n# Logging\\r\\nquarkus.banner.enabled=true\\r\\nquarkus.log.level=INFO\\r\\nquarkus.log.file.enable=true\\r\\nquarkus.log.file.level=DEBUG\\r\\nquarkus.log.file.path=/tmp/kys-app.log\\r\\n\\r\\n## DEV Profile Config Overrides\\r\\n%dev.quarkus.log.console.color=true\\r\\n%dev.quarkus.log.console.json=false\\r\\n%test.quarkus.log.console.json=false\\r\\n\\r\\n# OpenShift\\r\\nquarkus.kubernetes-client.trust-certs=true\\r\\nquarkus.openshift.route.expose=true\\r\\nquarkus.openshift.labels.generateby=quarkus-plugin\\r\\n\\r\\nquarkus.openshift.mounts.application-properties-volume.path=/jboss/home/config/application.properties\\r\\nquarkus.openshift.mounts.application-properties-volume.sub-path=application.properties\\r\\nquarkus.openshift.config-map-volumes.application-properties-volume.config-map-name=kyd-main-config\\r\\nquarkus.openshift.config-map-volumes.application-properties-volume.default-mode=0420\\r\\nquarkus.openshift.route.annotations.\\\"haproxy.router.openshift.io/timeout\\\"=60s\\r\\nquarkus.openshift.labels.\\\"kubernetes.io/part-of\\\"=quant-invest\\r\\n\\r\\n\\r\\n# Restful Cli\\r\\ncountries-api/mp-rest/url=https://restcountries.com\\r\\ncountries-api/mp-rest/scope=javax.inject.Singleton\\r\\ncountries-api/mp-rest/hostnameVerifier=io.quarkus.restclient.NoopHostnameVerifier\\r\\n# countries-api/mp-rest/proxyAddress=app-proxy.cgc.com.my:3128\\r\\n\\r\\n\\r\\n# Test google api since googleapi require httpproxy\\r\\n# google-api/mp-rest/url=https://www.youtube.com\\r\\n# google-api/mp-rest/proxyAddress=192.168.2.15:3128\\r\\n# google-api/mp-rest/connectTimeout=3000\\r\\n# google-api/mp-rest/readTimeout=3000\\r\\n\\r\\nproduct-api/mp-rest/url=http://localhost:8081\\r\\nproduct-api/mp-rest/scope=javax.inject.Singleton\\r\\nproduct-api/mp-rest/hostnameVerifier=io.quarkus.restclient.NoopHostnameVerifier\\r\\n\\r\\n# quarkus.tls.trust-all=true\\r\\n\\r\\n# Quarkus Mail\\r\\n# quarkus.mailer.auth-methods=DIGEST-MD5 CRAM-SHA256 CRAM-SHA1 CRAM-MD5 PLAIN LOGIN\\r\\n# quarkus.mailer.from=sqr-umarshabbir@cgc.com.my\\r\\n# quarkus.mailer.host=smtpmail.cgc.com.my\\r\\n# quarkus.mailer.port=25\\r\\n# quarkus.mailer.ssl=false\\r\\n\\r\\n\"},\"kind\":\"ConfigMap\",\"metadata\":{\"annotations\":{},\"creationTimestamp\":null,\"name\":\"kyd-main-config\",\"namespace\":\"classic-dev\"}}\n"
+  creationTimestamp: "2022-01-16T04:13:57Z"
+  managedFields: 
+    - 
+      apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1: 
+        ? "f:data"
+        : {}
+      manager: kubectl-create
+      operation: Update
+      time: "2022-01-16T04:13:57Z"
+    - 
+      apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1: 
+        ? "f:data"
+        : 
+          ? "f:application.properties"
+          : {}
+        ? "f:metadata"
+        : 
+          ? "f:annotations"
+          : 
+            ? "."
+            : {}
+            ? "f:kubectl.kubernetes.io/last-applied-configuration"
+            : {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2022-01-16T13:42:25Z"
+  name: kyd-main-config
+  namespace: classic-dev
+  resourceVersion: "559303863"
+  selfLink: /api/v1/namespaces/classic-dev/configmaps/kyd-main-config
+  uid: 051b04ed-6211-4c13-b139-1d9555e627f7
