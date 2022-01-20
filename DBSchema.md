@@ -43,7 +43,7 @@
 |turnover_value|float|成交金额，A股单位为元，B股单位为美元或港币|
 |deal_amount|int|成交笔数|
 |turnover_rate|float|日换手率，成交量/无限售流通股数|
-|accum_adj_factor|float|累积前复权因子，前复权价=未复权价*累积前复权因子。前复权是对历史行情进行调整，除权除息当日的行情无需调整。最近一次除权除息日至最新交易日期间的价格也无需调整，该期间前复权因子等于1。|
+|accum_adj_bf_factor|float|累积前复权因子，前复权价=未复权价*累积前复权因子。前复权是对历史行情进行调整，除权除息当日的行情无需调整。最近一次除权除息日至最新交易日期间的价格也无需调整，该期间前复权因子等于1。|
 |neg_market_value|float|流通市值，收盘价*无限售流通股数|
 |market_value|float|总市值，收盘价*总股本数|
 |chg_pct|float|涨跌幅，收盘价/昨收盘价-1|
@@ -52,6 +52,7 @@
 |pb|float|市净率，总市值/归属于母公司所有者权益合计|
 |is_open|int|股票今日是否开盘标记：0-未开盘，1-交易日|
 |vwap|float|VWAP，成交金额/成交量|
+|accum_adj_af_factor|float| 后复权因子|
 
 # 指数基本信息 stock.idx
 |名称|类型|描述|
