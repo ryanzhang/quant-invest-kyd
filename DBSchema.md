@@ -1,4 +1,4 @@
-# 股票基本信息
+# 股票基本信息 stock.equity
 |名称|类型|描述|
 |---	|---	|---	|
 |sec_id|str|证券ID|
@@ -24,33 +24,8 @@
 |end_date|str|财务报告日期|
 |TSh_equity|float|所有者权益合计|
 
-# 股票行业分类
-|名称|类型|描述|
-|---	|---	|---	|
-|sec_id|str|通联编制的证券编码，可在data_aPI.sec_idGet获取到。|
-|ticker|str|通用交易代码|
-|exchange_cd|str|通联编制的交易市场编码|
-|sec_short_name|str|证券简称|
-|sec_full_name|str|证券全称|
-|party_id|int|通联编制的机构编码|
-|industry_version_cd|str|行业分类标准数字编码|
-|industry|str|行业分类标准|
-|industry_id|str|行业分类编码，成分记录在最后一级行业分类下，上级行业请查看对应的一二三四级行业编码|
-|industry_symbol|str|行业分类编码，行业编制机构发布的行业编码|
-|into_date|str|成分纳入日期|
-|out_date|str|成分剔除日期|
-|is_new|int|是否最新：1-是，0-否|
-|industry_id1|str|一级行业编码|
-|industry_name1|str|一级行业|
-|industry_id2|str|二级行业编码|
-|industry_name2|str|二级行业|
-|industry_id3|str|三级行业编码|
-|industry_name3|str|三级行业|
-|industry_id4|str|四级行业编码|
-|industry_name4|str|四级行业|
-|equ_type|str|个股所属市场板块|
-|
-# 沪深股票日行情
+
+# 沪深股票日行情 stock.mkt_equ_day
 |名称|类型|描述|
 |---	|---	|---	|
 |sec_id|str|通联编制的证券编码，可使用data_aPI.sec_idGet获取|
@@ -77,8 +52,34 @@
 |pb|float|市净率，总市值/归属于母公司所有者权益合计|
 |is_open|int|股票今日是否开盘标记：0-未开盘，1-交易日|
 |vwap|float|VWAP，成交金额/成交量|
-|
-# 指数日行情
+
+# 指数基本信息 stock.idx
+|名称|类型|描述|
+|---	|---	|---	|
+|secID|str|通联编制的证券编码，可在DataAPI.SecIDGet获取到。|
+|publishDate|str|指数发布日期|
+|secShortName|str|指数简称|
+|ticker|str|指数代码|
+|indexTypeCD|str|指数类型编码|
+|indexType|str|指数类型|
+|pubOrgCD|int|通联编制的机构编码|
+|porgFullName|str|发布机构全称|
+|baseDate|str|指数计算基准日期|
+|basePoint|float|指数计算基准点位|
+|endDate|str|指数停用日期|
+|indexGroup|str|指数系列代码|
+|consType|str|样本覆盖的证券类型编码|
+|consMkt|str|样本覆盖的交易市场编码|
+|returnType|str|指数处理收益的类型编码|
+|wMethodCD|str|指数的加权方式编码|
+|updateTime|str|最近一次更新时间|
+|pubName|str|指数编制机构名称|
+|industryID|str|行业指数对应的通联行业编码，对应getIndustry.industryID|
+|industryName|str|行业分类名称|
+|sortID|str|通联编制的指数分类编码，对应getSecType.typeID|
+|sortName|str|指数分类名称|
+
+# 指数日行情 stock.mkt_idx_day
 |名称|类型|描述|
 |---	|---	|---	|
 |index_id|str|通联编制的证券编码|
@@ -96,38 +97,8 @@
 |turnover_value|float|成交金额，对于南华指数，该字段存储持仓量|
 |chg|float|涨跌，收盘-昨收盘|
 |chg_pct|float|涨跌幅，收盘/昨收盘-1|
-|
-# 交易所交易日历|
-|名称|类型|描述|
-|---	|---	|---	|
-|exchange_cd|str|证券交易所|
-|calendar_date|str|日期|
-|is_open|int|日期当天是否开市。0表示否，1表示是|
-|prev_trade_date|str|当前日期前一交易日|
-|is_week_end|int|当前日期是否当周最后交易日。0表示否，1表示是|
-|is_month_end|int|当前日期是否当月最后交易日。0表示否，1表示是|
-|is_quarter_end|int|当前日期是否当季最后交易日。0表示否，1表示是|
-|is_year_end|int|当前日期是否当年最后交易日。0表示否，1表示是|
-|
-# 公司股本变动
-|名称|类型|描述|
-|---	|---	|---	|
-|sec_id|str|证券ID|
-|ticker|str|交易代码|
-|sec_short_name|str|证券简称|
-|exchange_cd|str|交易市场。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所。对应data_aPI.sys_code_get.code_type_id=10002。|
-|party_id|int|机构ID|
-|change_date|str|变更日期|
-|total_shares|float|总股本|
-|shares_a|float|A股|
-|shares_b|float|B股|
-|float_a|float|流通A股|
-|nonrestfloat_a|float|无限售流通A股|
-|float_b|float|流通B股|
-|rest_shares|float|有限售条件股份合计|
-|nonrest_float_shares|float|无限售流通股份合计|
-|
-# 基金基本信息
+
+# 基金基本信息 stock.fund
 |名称|类型|描述|
 |---	|---	|---	|
 |sec_id|str|内部编码|
@@ -168,7 +139,7 @@
 |sec_full_name|str|基金中文全称|
 |class_name|str|分级名称|
 
-# 基金日行情
+# 基金日行情 stock.fund_day
 |名称|类型|描述|
 |---	|---	|---	|
 |sec_id|str|通联编制的证券编码，可使用data_aPI.sec_idGet获取|
@@ -189,3 +160,60 @@
 |discount_ratio|float|贴水率，(净值-收盘)/净值|
 |circulation_shares|float|流通份额|
 |accum_adj_factor|float|累积后复权因子|
+
+# 股票行业分类 stock.equ_industry
+|名称|类型|描述|
+|---	|---	|---	|
+|sec_id|str|通联编制的证券编码，可在data_aPI.sec_idGet获取到。|
+|ticker|str|通用交易代码|
+|exchange_cd|str|通联编制的交易市场编码|
+|sec_short_name|str|证券简称|
+|sec_full_name|str|证券全称|
+|party_id|int|通联编制的机构编码|
+|industry_version_cd|str|行业分类标准数字编码|
+|industry|str|行业分类标准|
+|industry_id|str|行业分类编码，成分记录在最后一级行业分类下，上级行业请查看对应的一二三四级行业编码|
+|industry_symbol|str|行业分类编码，行业编制机构发布的行业编码|
+|into_date|str|成分纳入日期|
+|out_date|str|成分剔除日期|
+|is_new|int|是否最新：1-是，0-否|
+|industry_id1|str|一级行业编码|
+|industry_name1|str|一级行业|
+|industry_id2|str|二级行业编码|
+|industry_name2|str|二级行业|
+|industry_id3|str|三级行业编码|
+|industry_name3|str|三级行业|
+|industry_id4|str|四级行业编码|
+|industry_name4|str|四级行业|
+|equ_type|str|个股所属市场板块|
+
+# 交易所交易日历 stock.trade_calendar
+|名称|类型|描述|
+|---	|---	|---	|
+|exchange_cd|str|证券交易所|
+|calendar_date|str|日期|
+|is_open|int|日期当天是否开市。0表示否，1表示是|
+|prev_trade_date|str|当前日期前一交易日|
+|is_week_end|int|当前日期是否当周最后交易日。0表示否，1表示是|
+|is_month_end|int|当前日期是否当月最后交易日。0表示否，1表示是|
+|is_quarter_end|int|当前日期是否当季最后交易日。0表示否，1表示是|
+|is_year_end|int|当前日期是否当年最后交易日。0表示否，1表示是|
+
+# 公司股本变动 stock.equ_share
+|名称|类型|描述|
+|---	|---	|---	|
+|sec_id|str|证券ID|
+|ticker|str|交易代码|
+|sec_short_name|str|证券简称|
+|exchange_cd|str|交易市场。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所。对应data_aPI.sys_code_get.code_type_id=10002。|
+|party_id|int|机构ID|
+|change_date|str|变更日期|
+|total_shares|float|总股本|
+|shares_a|float|A股|
+|shares_b|float|B股|
+|float_a|float|流通A股|
+|nonrestfloat_a|float|无限售流通A股|
+|float_b|float|流通B股|
+|rest_shares|float|有限售条件股份合计|
+|nonrest_float_shares|float|无限售流通股份合计|
+
