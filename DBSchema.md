@@ -56,28 +56,28 @@
 # 指数基本信息 stock.idx
 |名称|类型|描述|
 |---	|---	|---	|
-|secID|str|通联编制的证券编码，可在DataAPI.SecIDGet获取到。|
-|publishDate|str|指数发布日期|
-|secShortName|str|指数简称|
+|sec_iD|str|通联编制的证券编码，可在data_aPI.sec_iDGet获取到。|
+|publish_date|str|指数发布日期|
+|sec_short_name|str|指数简称|
 |ticker|str|指数代码|
-|indexTypeCD|str|指数类型编码|
-|indexType|str|指数类型|
-|pubOrgCD|int|通联编制的机构编码|
-|porgFullName|str|发布机构全称|
-|baseDate|str|指数计算基准日期|
-|basePoint|float|指数计算基准点位|
-|endDate|str|指数停用日期|
-|indexGroup|str|指数系列代码|
-|consType|str|样本覆盖的证券类型编码|
-|consMkt|str|样本覆盖的交易市场编码|
-|returnType|str|指数处理收益的类型编码|
-|wMethodCD|str|指数的加权方式编码|
-|updateTime|str|最近一次更新时间|
-|pubName|str|指数编制机构名称|
-|industryID|str|行业指数对应的通联行业编码，对应getIndustry.industryID|
-|industryName|str|行业分类名称|
-|sortID|str|通联编制的指数分类编码，对应getSecType.typeID|
-|sortName|str|指数分类名称|
+|index_type_cD|str|指数类型编码|
+|index_type|str|指数类型|
+|pub_org_cD|int|通联编制的机构编码|
+|porg_full_name|str|发布机构全称|
+|base_date|str|指数计算基准日期|
+|base_point|float|指数计算基准点位|
+|end_date|str|指数停用日期|
+|index_group|str|指数系列代码|
+|cons_type|str|样本覆盖的证券类型编码|
+|cons_mkt|str|样本覆盖的交易市场编码|
+|return_type|str|指数处理收益的类型编码|
+|w_method_cD|str|指数的加权方式编码|
+|update_time|str|最近一次更新时间|
+|pub_name|str|指数编制机构名称|
+|industry_iD|str|行业指数对应的通联行业编码，对应get_industry.industry_iD|
+|industry_name|str|行业分类名称|
+|sort_iD|str|通联编制的指数分类编码，对应get_sec_type.type_iD|
+|sort_name|str|指数分类名称|
 
 # 指数日行情 stock.mkt_idx_day
 |名称|类型|描述|
