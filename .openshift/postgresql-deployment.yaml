@@ -9,7 +9,7 @@ items:
       template.openshift.io/expose-username: '{.data[''database-user'']}'
     labels:
       template: postgresql-persistent-template
-    name: postgresql
+    name: pg-quant-invest
   stringData:
     database-name: market
     database-password: password
@@ -21,7 +21,7 @@ items:
       template.openshift.io/expose-uri: postgres://{.spec.clusterIP}:{.spec.ports[?(.name=="postgresql")].port}
     labels:
       template: postgresql-persistent-template
-    name: postgresql
+    name: pg-quant-invest
   spec:
     ports:
     - name: postgresql
@@ -30,7 +30,7 @@ items:
       protocol: TCP
       targetPort: 5432
     selector:
-      name: postgresql
+      name: pg-quant-invest
     sessionAffinity: None
     type: ClusterIP
   status:
@@ -40,7 +40,7 @@ items:
   metadata:
     labels:
       template: postgresql-persistent-template
-    name: postgresql
+    name: pg-quant-invest
   spec:
     accessModes:
     - ReadWriteOnce
@@ -55,17 +55,17 @@ items:
     labels:
       template: postgresql-persistent-template
       app.kubernetes.io/part-of: quant-invest
-    name: postgresql
+    name: pg-quant-invest
   spec:
     replicas: 1
     selector:
-      name: postgresql
+      name: pg-quant-invest
     strategy:
       type: Recreate
     template:
       metadata:
         labels:
-          name: postgresql
+          name: pg-quant-invest
       spec:
         containers:
         - capabilities: {}
@@ -74,22 +74,22 @@ items:
             valueFrom:
               secretKeyRef:
                 key: database-user
-                name: postgresql
+                name: pg-quant-invest
           - name: POSTGRESQL_PASSWORD
             valueFrom:
               secretKeyRef:
                 key: database-password
-                name: postgresql
+                name: pg-quant-invest
           - name: POSTGRESQL_ADMIN_PASSWORD
             valueFrom:
               secretKeyRef:
                 key: database-password
-                name: postgresql                
+                name: pg-quant-invest                
           - name: POSTGRESQL_DATABASE
             valueFrom:
               secretKeyRef:
                 key: database-name
-                name: postgresql
+                name: pg-quant-invest
           image: ' '
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -124,7 +124,7 @@ items:
         volumes:
         - name: postgresql-data
           persistentVolumeClaim:
-            claimName: postgresql
+            claimName: pg-quant-invest
     triggers:
     - imageChangeParams:
         automatic: true

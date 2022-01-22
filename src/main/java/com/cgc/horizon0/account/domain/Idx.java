@@ -15,7 +15,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "idx", schema = "stock")
 public class Idx extends PanacheEntity {
     @Column(name = "sec_id") public String secID;  //. 通联编制的证券编码，可在DataAPI.SecIDGet获取到。
-    @Column(name = "publish_date") @Temporal(TemporalType.DATE) public String publishDate;  //. 指数发布日期
+    @Column(name = "publish_date") @Temporal(TemporalType.DATE) public Date publishDate;  //. 指数发布日期
     @Column(name = "sec_short_name") public String secShortName;  //. 指数简称
     @Column(name = "ticker") public String ticker;  //. 指数代码
     @Column(name = "index_type_cd") public String indexTypeCD;  //. 指数类型编码
