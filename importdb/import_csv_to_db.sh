@@ -4,7 +4,7 @@
 #REM besides we need to make sure we have system variables in place
  
 #REM export a password for use with the system (no quotes)
-export PGHOST=postgresql
+export PGHOST=pg-quant-invest
 export PGDATABASE=market
 export PGUSER=postgres
 export PGPASSWORD=password
