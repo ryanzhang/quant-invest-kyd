@@ -15,14 +15,14 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "idx", schema = "stock")
 public class Idx extends PanacheEntity {
     @Column(name = "sec_id") public String secID;  //. 通联编制的证券编码，可在DataAPI.SecIDGet获取到。
-    @Column(name = "publish_date") public String publishDate;  //. 指数发布日期
+    @Column(name = "publish_date") @Temporal(TemporalType.DATE) public String publishDate;  //. 指数发布日期
     @Column(name = "sec_short_name") public String secShortName;  //. 指数简称
     @Column(name = "ticker") public String ticker;  //. 指数代码
     @Column(name = "index_type_cd") public String indexTypeCD;  //. 指数类型编码
     @Column(name = "index_type") public String indexType;  //. 指数类型
     @Column(name = "pub_org_cd") public Integer pubOrgCD; //	int	通联编制的机构编码
     @Column(name = "porg_full_name") public String porgFullName;  //. 发布机构全称
-    @Column(name = "base_date") public Date baseDate;  //. 指数计算基准日期
+    @Column(name = "base_date") @Temporal(TemporalType.DATE) public Date baseDate;  //. 指数计算基准日期
     @Column(name = "base_point") public Float basePoint; //	float	指数计算基准点位
     @Column(name = "end_date") @Temporal(TemporalType.DATE) public Date endDate;  //. 指数停用日期
     @Column(name = "index_group") public String indexGroup;  //. 指数系列代码

@@ -10,8 +10,8 @@
 |sec_short_name|str|证券简称|
 |sec_full_name|str|证券全称|
 |list_status_cd|str|上市状态。L-上市；S-暂停；DE-终止上市；UN-未上市。对应data_aPI.sys_code_get.code_type_id=10005。|
-|list_date|str|上市日期|
-|delist_date|str|摘牌日期|
+|list_date|Date|上市日期|
+|delist_date|Date|摘牌日期|
 |equ_type_cd|str|股票分类编码。例如，A-沪深A股；J-北证A股；B-沪深B股。|
 |equ_type|str|股票类别|
 |ex_country_cd|str|交易市场所属地区。例如，CHN-中国大陆；HKG-香港。对应data_aPI.sys_code_get.code_type_id=10002。|
@@ -21,7 +21,7 @@
 |nonrestfloat_a|float|无限售流通股本(最新)。如果为A股，该列为最新无限售流通A股股本数量；如果为B股，该列为最新流通B股股本数量|
 |office_addr|str|办公地址|
 |prime_operating|str|主营业务范围|
-|end_date|str|财务报告日期|
+|end_date|Date|财务报告日期|
 |TSh_equity|float|所有者权益合计|
 
 
@@ -32,7 +32,7 @@
 |ticker|str|通用交易代码|
 |sec_short_name|str|证券简称|
 |exchange_cd|str|通联编制的交易市场编码|
-|trade_date|str|交易日期|
+|trade_date|Date|交易日期|
 |pre_close_price|float|昨收盘(前复权)|
 |act_pre_close_price|float|实际昨收盘价(未复权)|
 |open_price|float|开盘价|
@@ -58,16 +58,16 @@
 |名称|类型|描述|
 |---	|---	|---	|
 |sec_iD|str|通联编制的证券编码，可在data_aPI.sec_iDGet获取到。|
-|publish_date|str|指数发布日期|
+|publish_date|Date|指数发布日期|
 |sec_short_name|str|指数简称|
 |ticker|str|指数代码|
 |index_type_cD|str|指数类型编码|
 |index_type|str|指数类型|
 |pub_org_cD|int|通联编制的机构编码|
 |porg_full_name|str|发布机构全称|
-|base_date|str|指数计算基准日期|
+|base_date|Date|指数计算基准日期|
 |base_point|float|指数计算基准点位|
-|end_date|str|指数停用日期|
+|end_date|Date|指数停用日期|
 |index_group|str|指数系列代码|
 |cons_type|str|样本覆盖的证券类型编码|
 |cons_mkt|str|样本覆盖的交易市场编码|
@@ -88,7 +88,7 @@
 |porg_full_name|str|发布机构全称|
 |sec_short_name|str|指数的证券简称|
 |exchange_cd|str|通联编制的交易市场编码|
-|trade_date|str|交易日期|
+|trade_date|Date|交易日期|
 |pre_close_index|float|昨收盘点位|
 |open_index|float|开盘点位|
 |lowest_index|float|最低点位|
@@ -119,10 +119,10 @@
 |list_status_cd|str|上市状态。L-上市；S-暂停；DE-终止上市；UN-未上市。对应data_aPI.sys_code_get.code_type_id=10005。|
 |manager_name|str|基金经理|
 |status|str|基金状态。A-存续中，E-已到期，为空则未成立|
-|establish_date|str|基金成立日期|
-|list_date|str|上市日期|
-|delist_date|str|终止上市日期|
-|expire_date|str|到期日|
+|establish_date|Date|基金成立日期|
+|list_date|Date|上市日期|
+|delist_date|Date|终止上市日期|
+|expire_date|Date|到期日|
 |management_company|int|基金管理人编码|
 |management_full_name|str|基金管理人中文全称|
 |custodian|int|基金托管人编码|
@@ -147,7 +147,7 @@
 |ticker|str|通用交易代码|
 |exchange_cd|str|通联编制的交易市场编码|
 |sec_short_name|str|证券简称|
-|trade_date|str|交易日期|
+|trade_date|Date|交易日期|
 |pre_close_price|float|昨收盘|
 |open_price|float|今开盘|
 |highest_price|float|最高价|
@@ -175,8 +175,8 @@
 |industry|str|行业分类标准|
 |industry_id|str|行业分类编码，成分记录在最后一级行业分类下，上级行业请查看对应的一二三四级行业编码|
 |industry_symbol|str|行业分类编码，行业编制机构发布的行业编码|
-|into_date|str|成分纳入日期|
-|out_date|str|成分剔除日期|
+|into_date|Date|成分纳入日期|
+|out_date|Date|成分剔除日期|
 |is_new|int|是否最新：1-是，0-否|
 |industry_id1|str|一级行业编码|
 |industry_name1|str|一级行业|
@@ -192,9 +192,9 @@
 |名称|类型|描述|
 |---	|---	|---	|
 |exchange_cd|str|证券交易所|
-|calendar_date|str|日期|
+|calendar_date|Date|日期|
 |is_open|int|日期当天是否开市。0表示否，1表示是|
-|prev_trade_date|str|当前日期前一交易日|
+|prev_trade_date|Date|当前日期前一交易日|
 |is_week_end|int|当前日期是否当周最后交易日。0表示否，1表示是|
 |is_month_end|int|当前日期是否当月最后交易日。0表示否，1表示是|
 |is_quarter_end|int|当前日期是否当季最后交易日。0表示否，1表示是|
@@ -208,7 +208,7 @@
 |sec_short_name|str|证券简称|
 |exchange_cd|str|交易市场。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所。对应data_aPI.sys_code_get.code_type_id=10002。|
 |party_id|int|机构ID|
-|change_date|str|变更日期|
+|change_date|Date|变更日期|
 |total_shares|float|总股本|
 |shares_a|float|A股|
 |shares_b|float|B股|
