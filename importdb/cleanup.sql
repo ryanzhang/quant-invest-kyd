@@ -1,0 +1,10 @@
+delete from stock.equ_share ;
+delete from stock.equity ;
+delete from stock.equity_industry ;
+delete from stock.fund;
+delete from stock.fund_day;
+delete from stock.idx;
+delete from stock.mkt_equ_day ;
+delete from stock.mkt_idx_day ;
+delete from stock.sys_code;
+delete from stock.trade_calendar;
