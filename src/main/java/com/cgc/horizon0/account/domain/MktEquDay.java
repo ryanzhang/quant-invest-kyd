@@ -38,7 +38,7 @@ public class MktEquDay extends PanacheEntity {
 	@Column(name = "pe")  public Float PE;  //滚动市盈率，即市盈率TTM，总市值/归属于母公司所有者的净利润TTM
 	@Column(name = "pe1")  public Float PE1;  //动态市盈率，总市值/归属于母公司所有者的净利润（最新一期财报年化）
 	@Column(name = "pb")  public Float PB;  //市净率，总市值/归属于母公司所有者权益合计
-	@Column(name = "is_open")  public Boolean isOpen; //股票今日是否开盘标记：0-未开盘，1-交易日
+	@Column(name = "is_open")  public Integer isOpen; //股票今日是否开盘标记：0-未开盘，1-交易日
 	@Column(name = "vwap")  public Float vwap;  //VWAP，成交金额/成交量
 	@Column(name = "accum_adj_af_factor")  public Float accumAdjAfFactor;  //累积后复权因子，后复权价=未复权价*累积前复权因子。前复权是对历史行情进行调整，除权除息当日的行情无需调整。最近一次除权除息日至最新交易日期间的价格也无需调整，该期间前复权因子等于1。
 }

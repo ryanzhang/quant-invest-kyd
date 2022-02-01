@@ -17,8 +17,8 @@
 |ex_country_cd|str|交易市场所属地区。例如，CHN-中国大陆；HKG-香港。对应data_aPI.sys_code_get.code_type_id=10002。|
 |party_id|int|机构内部ID|
 |total_shares|float|总股本(最新)|
-|nonrest_float_shares|float|公司无限售流通股份合计(最新)|
-|nonrestfloat_a|float|无限售流通股本(最新)。如果为A股，该列为最新无限售流通A股股本数量；如果为B股，该列为最新流通B股股本数量|
+|non_rest_float_shares|float|公司无限售流通股份合计(最新)|
+|non_rest_float_a|float|无限售流通股本(最新)。如果为A股，该列为最新无限售流通A股股本数量；如果为B股，该列为最新流通B股股本数量|
 |office_addr|str|办公地址|
 |prime_operating|str|主营业务范围|
 |end_date|Date|财务报告日期|
@@ -217,4 +217,13 @@
 |float_b|float|流通B股|
 |rest_shares|float|有限售条件股份合计|
 |nonrest_float_shares|float|无限售流通股份合计|
+
+
+# 整库数据更新状态表 stock.sync_status
+|名称|类型|描述|
+|---	|---	|---	|
+|table_name|str|表名称|
+|rc|bool|更新是否成功|
+|update_time|timestamp|更新时间|
+|comment|str|更新附加信息|
 
