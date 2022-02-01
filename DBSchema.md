@@ -193,12 +193,12 @@
 |---	|---	|---	|
 |exchange_cd|str|证券交易所|
 |calendar_date|Date|日期|
-|is_open|int|日期当天是否开市。0表示否，1表示是|
+|is_open|bool|日期当天是否开市。0表示否，1表示是|
 |prev_trade_date|Date|当前日期前一交易日|
-|is_week_end|int|当前日期是否当周最后交易日。0表示否，1表示是|
-|is_month_end|int|当前日期是否当月最后交易日。0表示否，1表示是|
-|is_quarter_end|int|当前日期是否当季最后交易日。0表示否，1表示是|
-|is_year_end|int|当前日期是否当年最后交易日。0表示否，1表示是|
+|is_week_end|bool|当前日期是否当周最后交易日。0表示否，1表示是|
+|is_month_end|bool|当前日期是否当月最后交易日。0表示否，1表示是|
+|is_quarter_end|bool|当前日期是否当季最后交易日。0表示否，1表示是|
+|is_year_end|bool|当前日期是否当年最后交易日。0表示否，1表示是|
 
 # 公司股本变动 stock.equ_share
 |名称|类型|描述|
