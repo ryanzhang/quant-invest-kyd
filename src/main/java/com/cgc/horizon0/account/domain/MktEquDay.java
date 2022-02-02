@@ -28,7 +28,7 @@ public class MktEquDay extends PanacheEntity {
 	@Column(name = "lowest_price") public Float lowestPrice;  //最低价
 	@Column(name = "close_price")  public Float closePrice;  //收盘价
 	@Column(name = "turnover_vol")  public Float turnoverVol;  //成交量
-	@Column(name = "turnove_value")  public Float turnoverValue;  //成交金额，A股单位为元，B股单位为美元或港币
+	@Column(name = "turnover_value")  public Float turnoverValue;  //成交金额，A股单位为元，B股单位为美元或港币
 	@Column(name = "deal_amount")  public Float dealAmount;  //	成交笔数
 	@Column(name = "turnover_rate")  public Float turnoverRate;  //日换手率，成交量/无限售流通股数
 	@Column(name = "accum_adj_bf_factor")  public Float accumAdjBfFactor;  //累积前复权因子，前复权价=未复权价*累积前复权因子。前复权是对历史行情进行调整，除权除息当日的行情无需调整。最近一次除权除息日至最新交易日期间的价格也无需调整，该期间前复权因子等于1。
