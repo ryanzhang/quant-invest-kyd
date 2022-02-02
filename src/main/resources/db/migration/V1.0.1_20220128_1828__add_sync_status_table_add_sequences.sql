@@ -34,4 +34,5 @@ CREATE UNIQUE INDEX IF NOT EXISTS mkt_idx_day_idx ON stock.mkt_idx_day(trade_dat
 CREATE UNIQUE INDEX IF NOT EXISTS fund_idx ON stock.fund(sec_id);
 CREATE UNIQUE INDEX IF NOT EXISTS fund_day_idx ON stock.fund_day(trade_date, ticker);
 CREATE UNIQUE INDEX IF NOT EXISTS sync_status_idx ON stock.sync_status(table_name);
+CREATE UNIQUE INDEX IF NOT EXISTS trade_calendar_id_seq ON stock.trade_calendar(exchange_cd, calendar_date);
 
