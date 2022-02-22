@@ -1,0 +1,19 @@
+
+#fund_all.csv
+df_secid = DataAPI.FundGet(secID=u"",etfLof=u"ETF",listStatusCd=u"",category=u"",beginDate="",endDate="",status="",field=u"secID",pandas="1")
+sizeCount = 0
+need_header=True
+# # print(df)
+# df.to_csv("fund_etf.csv", encoding="gbk")
+
+for secID in df_secid['secID']:
+    df = DataAPI.MktFunddGet(secID=secID,ticker=u"",beginDate=u"19900101",endDate=u"20220201",field=u"",pandas="1")
+# print(df)
+    sizeCount=sizeCount+df.size
+    if sizeCount >100000:
+        # print ("Size is about 100M, Start to new file since secID: " + secID)
+        # count=count+1
+        need_header=True
+        break
+    df.to_csv("fund_etf_d_test.csv", mode='a', header=need_header, encoding="gbk")
+    need_header=False

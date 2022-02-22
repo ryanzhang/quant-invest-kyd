@@ -24,4 +24,5 @@ elif [ "$1" == "-h" ] || [ "$1" == "--help" ];then
 fi
 
 #REM execute psql by file, even though echo is off, errors will still show
-psql -X --variable=ON_ERROR_STOP= -1 -w -f import.sql
+#psql -X --variable=ON_ERROR_STOP= -1 -w -f import.sql
+psql -X --variable=ON_ERROR_STOP= -1 -w -f import_share_float.sql

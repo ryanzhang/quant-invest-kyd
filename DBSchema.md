@@ -25,6 +25,36 @@
 |TSh_equity|float|所有者权益合计|
 
 
+# 公司十大流通股东 equ_float_shareholder_top10
+|名称|类型|描述|
+|---	|---	|---	| 
+|secID|str|证券内部编码，一串流水号,可先通过DataAPI.SecIDGet获取到，如在DataAPI.SecIDGet，选择证券类型为'E',输入'000001'，可获取到ID'000001.XSHE'后，在此输入'000001.XSHE'|
+|ticker|str|股票代码|
+|secShortName|str|证券简称|
+|exchangeCD|str|交易市场。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所。对应DataAPI.SysCodeGet.codeTypeID=10002。|
+|endDate|str|截止日期，输入格式“YYYYMMDD”|
+|publishDate|str|发布时间|
+|shNum|int|股东序号|
+|shName|str|股东名称|
+|holdVol|float|持无限售条件股份数量|
+|holdPct|float|持股比例|
+|shareType|str|股份性质|
+|updateTime|str|更新时间|
+
+
+# 限售股解禁 stock.equ_share_float
+|名称|类型|描述|
+|---	|---	|---	| 
+|secID|str|证券内部编码，一串流水号,可先通过DataAPI.SecIDGet获取到，如在DataAPI.SecIDGet，选择证券类型为'E',输入'000001'，可获取到ID'000001.XSHE'后，在此输入'000001.XSHE'|
+|ticker|str|股票代码|
+|secShortName|str|证券简称|
+|exchangeCD|str|交易市场。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所。对应DataAPI.SysCodeGet.codeTypeID=10002。|
+|publishDate|str|公告日期|
+|floatDate|str|流通日期|
+|floatNum|float|流通数量|
+|shareProperty|str|限售流通股份性质。1-定向增发机构配售股份，2-公开增发机构配售股份，3-公开增发一般股份等，对应DataAPI.SysCodeGet.codeTypeID=20108。|
+
+
 # 沪深股票日行情 stock.mkt_equ_day
 |名称|类型|描述|
 |---	|---	|---	|
@@ -39,7 +69,7 @@
 |highest_price|float|最高价|
 |lowest_price|float|最低价|
 |close_price|float|收盘价|
-|turnover_vol|float|成交量|
+|turnover_vol|float|成交量, 股数为单位|
 |turnover_value|float|成交金额，A股单位为元，B股单位为美元或港币|
 |deal_amount|int|成交笔数|
 |turnover_rate|float|日换手率，成交量/无限售流通股数|
