@@ -51,7 +51,7 @@
 |exchangeCD|str|交易市场。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所。对应DataAPI.SysCodeGet.codeTypeID=10002。|
 |publishDate|str|公告日期|
 |floatDate|str|流通日期|
-|floatNum|float|流通数量|
+|floatNum|float|流通数量, 单位:万股|
 |shareProperty|str|限售流通股份性质。1-定向增发机构配售股份，2-公开增发机构配售股份，3-公开增发一般股份等，对应DataAPI.SysCodeGet.codeTypeID=20108。|
 
 
@@ -77,9 +77,9 @@
 |neg_market_value|float|流通市值，收盘价*无限售流通股数|
 |market_value|float|总市值，收盘价*总股本数|
 |chg_pct|float|涨跌幅，收盘价/昨收盘价-1|
-|pe|float|滚动市盈率，即市盈率TTM，总市值/归属于母公司所有者的净利润TTM|
-|pe1|float|动态市盈率，总市值/归属于母公司所有者的净利润（最新一期财报年化）|
-|pb|float|市净率，总市值/归属于母公司所有者权益合计|
+|pe|float|滚动市盈率，即市盈率TTM，总市值/归属于母公司所有者的净利润TTM, Earning Per Share, TTM = Trailig Twelve Month, 使用过去的12个月的盈利作为参考 |
+|pe1|float|动态市盈率，总市值/归属于母公司所有者的净利润（最新一期财报年化）动态市盈率=股票现价÷未来每股收益的预测值, 动态市盈率是指还没有真正实现的下一年度的预测利润的市盈率。即Forward PE, FPE更能表示未来股价期望，因为TTM的盈利能力已经表现在股价上面|
+|pb|float|市净率，总市值/归属于母公司所有者权益合计, b表示总资产-总负债|
 |is_open|int|股票今日是否开盘标记：0-未开盘，1-交易日|
 |vwap|float|VWAP，成交金额/成交量|
 |accum_adj_af_factor|float| 后复权因子|
