@@ -45,14 +45,17 @@
 # 限售股解禁 stock.equ_share_float
 |名称|类型|描述|
 |---	|---	|---	| 
-|secID|str|证券内部编码，一串流水号,可先通过DataAPI.SecIDGet获取到，如在DataAPI.SecIDGet，选择证券类型为'E',输入'000001'，可获取到ID'000001.XSHE'后，在此输入'000001.XSHE'|
-|ticker|str|股票代码|
-|secShortName|str|证券简称|
-|exchangeCD|str|交易市场。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所。对应DataAPI.SysCodeGet.codeTypeID=10002。|
-|publishDate|str|公告日期|
-|floatDate|str|流通日期|
-|floatNum|float|流通数量, 单位:万股|
-|shareProperty|str|限售流通股份性质。1-定向增发机构配售股份，2-公开增发机构配售股份，3-公开增发一般股份等，对应DataAPI.SysCodeGet.codeTypeID=20108。|
+|ticker|	str|	证券交易代码
+|secShortName|	str|	股票简称
+|floatingDate|	date|	解禁日期
+|newMarketableShares|	float|	本次解禁（万股）
+|propotionNewOld|	floaat|	占解禁前流通股比例
+|propotionNewAccu|	float|	占解禁后流通股比例
+|propotionNewTotal|	float|	占总股本比例
+|shareSource|	float|	上市股份类型
+|nonMarketableShares|	float	剩余限售股数（万股）
+|floatValue|	float|	流通市值
+|updateTime|	str|	更新时间
 
 
 # 沪深股票日行情 stock.mkt_equ_day

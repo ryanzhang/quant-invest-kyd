@@ -32,3 +32,6 @@ lint:             ## Run pep8, black, mypy linters.
 dev:              ## Format code using black & isort.
 	mvn clean package
 	java -jar target/quarkus-app/quarkus-run.jar
+
+stage:              ## Format code using black & isort.
+	mvn clean package -Dquarkus.kubernetes.deploy=true -DskipTests

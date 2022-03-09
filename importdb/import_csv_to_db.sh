@@ -5,6 +5,7 @@
  
 #REM export a password for use with the system (no quotes)
 export PGHOST=pg-quant-invest
+# export PGHOST=192.168.2.13
 export PGDATABASE=market
 export PGUSER=postgres
 export PGPASSWORD=password
@@ -25,4 +26,5 @@ fi
 
 #REM execute psql by file, even though echo is off, errors will still show
 #psql -X --variable=ON_ERROR_STOP= -1 -w -f import.sql
-psql -X --variable=ON_ERROR_STOP= -1 -w -f import_share_float.sql
+# psql -X --variable=ON_ERROR_STOP= -1 -w -f import_share_float.sql
+psql -X --variable=ON_ERROR_STOP= -1 -w -f import_equ_60k.sql

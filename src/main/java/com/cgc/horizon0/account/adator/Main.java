@@ -1,9 +1,5 @@
 package com.cgc.horizon0.account.adator;
 
-import javax.inject.Inject;
-
-import org.jboss.logging.Logger;
-
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
