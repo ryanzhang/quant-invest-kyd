@@ -57,6 +57,34 @@
 |floatValue|	float|	流通市值
 |updateTime|	str|	更新时间
 
+# 财务指标—每股 (Point in time)
+|名称|类型|描述|
+|---	|---	|---	| 
+|secID|str|证券编码
+|partyID|str|机构编码
+|ticker|str|证券交易代码
+|secShortName|str|证券简称
+|exchangeCD|str|通联编制的证券市场编码。例如，XSHG-上海证券交易所；XSHE-深圳证券交易所等。对应DataAPI.SysCodeGet.codeTypeID=10002。
+|publishDate|date|证券交易所披露的信息发布日期
+|endDate|date|截止日期
+|actPubtime|datetime|实际披露时间
+|EPS|float|每股收益(期末摊薄,元/股), 报告期的利润除以期末的股份数 （国内2006年新会计制度后废弃）
+|basicEPS|float|基本每股收益, 归属于普通股股东的当期净利润除以发行在外普通股的加权平均数
+|dilutedEPS|float|稀释每股收益, 即假设公司存在的上述可能转化为上市公司股权的工具都在当期全部转换为普通股股份后计算的每股收益. 我国企业发行的潜在普通股主要有可转换公司债券、认股权证、股份期权等。潜在普通股通常对每股收益具有稀释的可能性。比如，可转换公司债券是一种潜在普通股，具有稀释每股收益的可能性，不是在实际转换时，而是在其存在期间具有稀释的可能性。等到实际转换时，就变为对基本每股收益的影响，而不是对稀释每股收益的影响
+|nAssetPS|float|每股净资产(元/股)
+|tRevPS|float|每股营业总收入(元/股)
+|revPS|float|每股营业收入(元/股)
+|opPS|float|每股营业利润(元/股)
+|EBITPS|float|每股息税前利润(元/股)
+|cReserPS|float|每股资本公积(元/股)
+|sReserPS|float|每股盈余公积(元/股)
+|reserPS|float|每股公积金(元/股) 每股公积金分为资本公积金和盈余公积金。资本公积金：溢价发行债券的差额和无偿捐赠资金实物作为资本公积金。盈余公积金：从偿还债务后的税后利润中提取10%作为盈余公积金。
+|rePS|float|每股未分配利润(元/股)
+|tRePS|float|每股留存收益(元/股)
+|nCfOperAPS|float|每股经营活动产生的现金流量净额(元/股)
+|nCInCashPS|float|每股现金流量净额(元/股)
+|FCFFPS|float|每股企业自由现金流量(元/股) https://xueqiu.com/6217652971/199799351
+|FCFEPS|float|每股股东自由现金流量(元/股)
 
 # 沪深股票日行情 stock.mkt_equ_day
 |名称|类型|描述|

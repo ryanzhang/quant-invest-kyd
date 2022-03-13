@@ -17,7 +17,7 @@ public class Equity extends PanacheEntity {
 
 	@Column(name = "sec_id")
 	public String secID;//证券ID
-@Column(name = "ticker")
+	@Column(name = "ticker")
 	public String ticker;//交易代码
 
 	@Column(name = "exchange_cd")

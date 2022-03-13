@@ -27,4 +27,6 @@ fi
 #REM execute psql by file, even though echo is off, errors will still show
 #psql -X --variable=ON_ERROR_STOP= -1 -w -f import.sql
 # psql -X --variable=ON_ERROR_STOP= -1 -w -f import_share_float.sql
-psql -X --variable=ON_ERROR_STOP= -1 -w -f import_equ_60k.sql
+#psql -X --variable=ON_ERROR_STOP= -1 -w -f import_equ_60k.sql
+# psql -X --variable=ON_ERROR_STOP= -1 -w -f import_ps_pit.sql
+psql -X --variable=ON_ERROR_STOP= -1 -w -f import_equd_20220117_0312.sql
