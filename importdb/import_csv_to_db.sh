@@ -4,8 +4,8 @@
 #REM besides we need to make sure we have system variables in place
  
 #REM export a password for use with the system (no quotes)
-export PGHOST=pg-quant-invest
-# export PGHOST=192.168.2.13
+# export PGHOST=pg-quant-invest
+export PGHOST=192.168.2.13
 export PGDATABASE=market
 export PGUSER=postgres
 export PGPASSWORD=password
@@ -30,3 +30,4 @@ fi
 #psql -X --variable=ON_ERROR_STOP= -1 -w -f import_equ_60k.sql
 # psql -X --variable=ON_ERROR_STOP= -1 -w -f import_ps_pit.sql
 psql -X --variable=ON_ERROR_STOP= -1 -w -f import_equd_20220117_0312.sql
+psql -X --variable=ON_ERROR_STOP= -1 -w -f import_equd_20220314_0406.sql
